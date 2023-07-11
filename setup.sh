@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Enter Your Template Name: "
+
 read template_name
 
 npm create vite@latest ${template_name} -- --template react
@@ -29,6 +30,9 @@ EOT
 
 cd ./src
 
+rm $(pwd)/App.css
+rm $(pwd)/App.jsx
+
 cat <<EOT > index.css
 
 @tailwind base;
@@ -39,7 +43,8 @@ EOT
 
 rm -rf $(pwd)/assets
 
-mkdir pages
+mkdir pages components
+
 
 cd ./pages
 
@@ -47,18 +52,56 @@ touch HomePage.jsx
 
 cat  <<EOT > HomePage.jsx
 
-import React from 'react';
+
+import React, { Fragment } from 'react';
 
 const HomePage = () => {
   return (
     <Fragment>
-      Home Page
+      Starter Template for ${template_name}
     </Fragment>
   );
 }
 
 export default HomePage;
 
+
+
 EOT
 
 
+cd ../
+
+cat <<EOT > main.jsx
+
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { PAGES } from './routes';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    {PAGES.map((item) => item.component)}
+  </React.StrictMode>,
+)
+
+
+EOT
+
+
+cat <<EOT > routes.jsx
+
+import React from 'react';
+import HomePage from './pages/HomePage.jsx'
+
+export const PAGES = [
+  {
+    name : "Home Page",
+    path : "/home",
+    component : <HomePage />
+  }
+]
+
+
+
+EOT
