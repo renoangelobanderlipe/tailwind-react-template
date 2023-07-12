@@ -1,1 +1,1 @@
-# setup script for React and Tailwind
+# SETUP SCRIPT FOR REACT AND TAILWIND
