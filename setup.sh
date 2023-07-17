@@ -294,6 +294,16 @@ export const PAGES = [
   }
 ]
 
-
-
 EOT
+
+cd ..
+
+git init 
+
+git add README.md
+
+git add .
+
+git commit -m 'initial setup'
+
+git branch -M main
