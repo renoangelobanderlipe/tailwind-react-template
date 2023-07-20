@@ -5,9 +5,9 @@
 
 ### SETUP STEPS
 
-1 . Clone the project by running. 
+1 . Clone the project by running.<br/>
 ``` git clone https://github.com/renoangelobanderlipe/tailwind-react-template ```
-2. cd <project-nae>
+2. cd <project-nae><br/>
 ``` cd <project-name> ```
 3. Run the script
 ### On MACOS / Linux
