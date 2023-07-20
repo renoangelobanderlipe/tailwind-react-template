@@ -5,7 +5,7 @@
 
 ### SETUP STEPS
 
-1 . Clone the project by running.<br />
+1. Clone the project by running.<br />
 ``` git clone https://github.com/renoangelobanderlipe/tailwind-react-template ``` 
 <br />
 2. cd <project-nae><br />
